@@ -39,7 +39,9 @@
           </header>
 
   <main role="main" class="inner cover">
-    <p class="lead"><div id="maintext">Para a felicidade de muitos e alegria de poucos.</div></p>
+    <h1 class="cover-heading">
+        <div id="maintext">Para a felicidade de muitos e alegria de poucos.</div>
+    </h1>
   </main>
 
   <footer class="mastfoot mt-auto">
@@ -50,8 +52,10 @@
 </div>
 
 <script>
-$.getJSON("origin.json", function(result){
-    $('#maintext').text(result.texts);
+$( document ).ready(function() {
+    $.getJSON("origin.json", function(result){
+        $('#maintext').text(result.texts);
+    });
 });
 
 </script>
