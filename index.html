@@ -40,7 +40,7 @@
 
   <main role="main" class="inner cover">
     <h1 class="cover-heading">
-        <div id="maintext">Para a felicidade de muitos e alegria de poucos.</div>
+        <div id="maintext">Loading...</div>
     </h1>
   </main>
 
@@ -52,11 +52,14 @@
 </div>
 
 <script>
+
+function random_item(items) {
+    return items[Math.floor(Math.random()*items.length)];     
+}
+
 $( document ).ready(function() {
     $.getJSON("origin.json", function(result){
-        alert(result.texts);
-        alert($('#maintext').text());
-        $('#maintext').text(result.texts);
+        $('#maintext').text(random_item(result.texts));
     });
 });
 
