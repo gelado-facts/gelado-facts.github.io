@@ -25,13 +25,21 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   </head>
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
+        <header class="masthead mb-auto">
+            <div class="inner">
+              <h3 class="masthead-brand">&nbsp;</h3>
+            </div>
+          </header>
+
   <main role="main" class="inner cover">
-    <h1 class="cover-heading">Dev0ps facts</h1>
-    <p class="lead"><div id="main-text">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</div></p>
+    <p class="lead"><div id="maintext">Para a felicidade de muitos e alegria de poucos.</div></p>
   </main>
 
   <footer class="mastfoot mt-auto">
@@ -40,6 +48,14 @@
     </div>
   </footer>
 </div>
+
+<script>
+$.getJSON("origin.json", function(result){
+    $('#maintext').text(result.texts);
+});
+
+</script>
+
 </body>
 </html>
 
