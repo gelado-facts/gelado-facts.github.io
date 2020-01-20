@@ -54,6 +54,8 @@
 <script>
 $( document ).ready(function() {
     $.getJSON("origin.json", function(result){
+        alert(result.texts);
+        alert($('#maintext').text());
         $('#maintext').text(result.texts);
     });
 });
