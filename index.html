@@ -58,8 +58,14 @@ function random_item(items) {
 }
 
 $( document ).ready(function() {
+    var items = ["text", "text", "text", "text", "image"];
     $.getJSON("origin.json", function(result){
-        $('#maintext').text(random_item(result.texts));
+        var current = random_item(items);
+	if (current == "text") {
+            $('#maintext').text(random_item(result.texts));
+        } else {
+            $('#maintext').append("<img src='img/" + random_item(result.images) + "'/>");
+	}
     });
 });
 
